@@ -1,0 +1,2 @@
+env = Environment()
+hello = Program(["hello.c"])

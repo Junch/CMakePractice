@@ -1,0 +1,14 @@
+# The CPPPATH Construction Variable
+# http://www.scons.org/doc/0.92/HTML/scons-user/x537.html
+
+env = Environment(CPPPATH = '.')
+hello = env.Program('hello.c')
+
+################################################################
+# env = Environment(CPPPATH = ['include', '/home/project/inc'])
+# hello = env.Program('hello.c')
+
+# scons hello
+# cc -Iinclude -I/home/project/inc -c hello.c -o hello.o
+# cc -o hello hello.o
+#

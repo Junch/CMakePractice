@@ -1,1 +1,7 @@
 build/
+_build/
+_builds/
+hello
+.sconsign.dblite
+*.o
+
