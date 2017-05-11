@@ -3,6 +3,8 @@
 
 env = Environment(CPPPATH = '.')
 hello = env.Program('hello.c')
+print "CPPPATH={}".format(env.Dump('CPPPATH'))
+print env.Dump()
 
 ################################################################
 # env = Environment(CPPPATH = ['include', '/home/project/inc'])

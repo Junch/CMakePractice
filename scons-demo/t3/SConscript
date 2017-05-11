@@ -1,0 +1,6 @@
+# The CPPPATH Construction Variable
+# http://www.scons.org/doc/0.92/HTML/scons-user/x537.html
+
+env = Environment(CPPPATH = ['.'])
+hello = env.Program('hello.c')
+print "CPPPATH={}".format(env.Dump('CPPPATH'))
