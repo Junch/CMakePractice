@@ -1,0 +1,22 @@
+CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
+
+PROJECT (HELLO)
+
+SET(CMAKE_CXX_STANDARD 14)
+
+IF(WIN32)
+    # make the Release version create a PDB
+    SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
+    # minimize the size or the resulting EXE
+    SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
+ENDIF()
+
+# https://stackoverflow.com/questions/21685809/get-cmake-and-home-brew-to-work-together
+MESSAGE("system: ${CMAKE_SYSTEM_PREFIX_PATH}")
+FIND_LIBRARY(FOLLY_LIBRARY folly)
+MESSAGE("folly: ${FOLLY_LIBRARY}")
+
+SET(SRC_LIST main.cpp)
+MESSAGE(STATUS "This is BINARY dir ${HELLO_BINARY_DIR}")
+MESSAGE(STATUS "This is SOURCE dir ${HELLO_SOURCE_DIR}")
+ADD_EXECUTABLE(hello ${SRC_LIST})
